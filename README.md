@@ -155,8 +155,8 @@ No known bugs at this time.
 
 ## Authors
 Simon Tanyi - [Github](https://github.com/Lamba237)
-Saheed Kehinde Yusuf - [Github](https://github.com/Da4midable/)
+Saheed Kehinde Yusuf - [Github](https://github.com/JTCubed/)
 
-Second part of Airbnb: Simon Tanyi and Saheed Kehinde Yusuf
+Fourth part of Airbnb: Simon Tanyi and JTCubed
 ## License
 Public Domain. No copy write protection. 
