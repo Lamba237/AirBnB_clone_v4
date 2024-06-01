@@ -14,10 +14,14 @@ header .logo {
 
 #api_status {
     width: 40px;
+    position: absolute;
     height: 40px;
+    right: 30px;
+    top: 50%; /*Moves div down to 50px of header height*/
     border-radius: 50%;
     background-color: #CCCCCC;
-    alight-item: right;
+    /*alight-item: right;*/
+    transform: translateY(-50%);
 }
 
 .available {
