@@ -1,26 +1,26 @@
 $(document).ready(function() {
-    let selectedAmenities = {};
+  let checkedAmenities = {};
+  $(document).on('change', "input[type='checkbox']", function() {
+    if (this.checked) {
+      checkedAmenities[$(this).parent().data('id')] = $(this).parent().data('name');
+    } else {
+      delete checkedAmenities[$(this).parent().data('id')];
+    }
+    let lst = Object.values(checkedAmenities);
+    if (lst.length > 0) {
+      $("div.amenities > h4").text(Object.values(checkedAmenities).join(', '));
+    } else {
+      $("div.amenities > h4").html("&nbsp;");
+    }
+  });
 
-    $('input[type="checkbox"]').change(function() {
-	let amenityId = $(this).data('id');
-	let amenityName = $(this).data('name');
-
-	if ($(this).is(':checked')) {
-	    selectedAmenities[amenityId] = amenityName;
-	}
-	else {
-	    delete selectedAmenity[amenityId];
-	}
-
-	let amenitiesList = Object.values(selectedAmenities).join(', ');
-	$('.amenities h4').text(amenitiesList);
-    });
-
-    $.ajax({
-	type: 'GET',
-	url: 'https://google.com',
-	success: function(data, textStatus, xhr) {
-	    console.log(xhr.status)
-	}
-    })
+  $.get('http://0.0.0.0:5001/api/v1/status/', function(data, textStatus) {
+    if (textStatus === 'success') {
+      if (data.status === 'OK') {
+        $('#api_status').addClass('available');
+      } else {
+        $('#api_status').removeClass('available');
+      }
+    }
+  });
 });
