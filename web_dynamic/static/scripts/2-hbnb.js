@@ -18,10 +18,9 @@ $(document).ready(function() {
 
     $.ajax({
 	type: 'GET',
-	url: 'http://0.0.0.0:5001/api/v1/status/',
-	success: function(data) {
-	    console.log(data)
+	url: 'https://google.com',
+	success: function(data, textStatus, xhr) {
+	    console.log(xhr.status)
 	}
-    })
     })
 });
