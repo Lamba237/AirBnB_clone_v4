@@ -15,4 +15,13 @@ $(document).ready(function() {
 	let amenitiesList = Object.values(selectedAmenities).join(', ');
 	$('.amenities h4').text(amenitiesList);
     });
+
+    $.ajax({
+	type: 'GET',
+	url: 'http://0.0.0.0:5001/api/v1/status/',
+	success: function(data) {
+	    console.log(data)
+	}
+    })
+    })
 });
